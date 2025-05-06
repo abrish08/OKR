@@ -15,13 +15,13 @@ const Styles = {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between', // Changed to space-between
-    padding: '10px 20px', // Added padding for better spacing
+    justifyContent: 'space-between', 
+    padding: '10px 20px', 
   },
   footer: {
     backgroundColor: '#808080',
-    marginTop: '100vh', // Corrected to marginTop
-    display: 'flex', // Corrected to display
+    marginTop: '100vh', 
+    display: 'flex', 
   },
   anchor: {
     display: 'flex',
