@@ -1,6 +1,23 @@
 import express from 'express';
-const PORT=5000;
-const app=express();
-app.use(express);
+import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import { connectDB } from './Config/db.js';
+import userRoute from './Routes/userRoute.js';
+import path from 'path';
 
-app.listen(PORT, console.log(`"welcome to node server ${PORT}` ));
+dotenv.config();
+connectDB();
+
+const app = express();
+const PORT = process.env.PORT ;
+
+app.use(cors());
+app.use(bodyParser.json());
+app.use('/upload', express.static('Uploads')); // Serve uploaded images
+
+app.use('/api', userRoute); // Register routes
+
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});

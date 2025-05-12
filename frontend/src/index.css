@@ -5,15 +5,31 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:aliceblue;
-  background-image:url('./Asset/bg.jpg');
+  background-color:rgb(240, 248, 255);
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.siteContainer{
-  min-height:'100vh'
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* src/index.css */
+@import "~rsuite/dist/rsuite.min.css";
 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .rs-sidenav {
+    width: 100%; /* Full width on mobile */
+  }
+
+  .rs-sidenav .rs-sidenav-toggle {
+    display: block; /* Show toggle button on mobile */
+  }
 }

@@ -3,27 +3,22 @@ import { Timestamp } from 'mongodb';
 import mongoose from 'mongoose';
 
 const itemSchema = new mongoose.Schema({
-  name: {
+  title: {
     type: String,
-    required: true
+    required: true,
   },
-  description: {
+  fileUrl: {
     type: String,
-    required: false
+    required: true,
   },
-  price: {
-    type: Number,
-    required: true
-  },
-  image: {
-    type: String,
-    required: false
-  },
-  createdAt: {
+  uploadAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
+  
+
+ 
 
 });
 
-export default mongoose.model('Item', itemSchema);
+export const Item= mongoose.model('Item', itemSchema);
